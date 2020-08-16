@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewmodels="clr-namespace:MyDiary.ViewModel" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             mc:Ignorable="d"
+             x:Class="MyDiary.View.StartupPage" NavigationPage.HasNavigationBar="False" NavigationPage.HasBackButton="False"
+             BackgroundImageSource="Startup.png">
+
+    <ContentPage.BindingContext>
+        <viewmodels:startupViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <CarouselView ItemsSource="{Binding Monkeys}" x:Name="startupCarousel"
+                      IndicatorView="indicatorView">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame HasShadow="True"
+                               BorderColor="DarkGray"
+                               CornerRadius="5"
+                               Margin="20,10,20,10"
+                               HeightRequest="350"
+                               HorizontalOptions="Center"
+                               VerticalOptions="CenterAndExpand">
+                                <StackLayout>
+                                    <Label Text="{Binding Name}" 
+                                       FontAttributes="Bold"
+                                       FontSize="Large"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center" />
+
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                                        <forms:AnimationView x:Name="AnimationView" Animation="{Binding ImageUrl}" Loop="True" AutoPlay="True"
+                         VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="{Binding animationSize}" WidthRequest ="{Binding animationSize}"  Speed="1"/>
+                                    </StackLayout>
+                                    
+                                    <Label Text="{Binding Location}"
+                                       HorizontalOptions="Center" />
+                                    <Label Text="{Binding Details}"
+                                       FontAttributes="Italic"
+                                       HorizontalOptions="Center"
+                                       MaxLines="5"
+                                       LineBreakMode="TailTruncation"
+                                           HorizontalTextAlignment="Center"/>
+
+                                    <Button Text="{Binding buttonName}" IsVisible="{Binding ButtonVisible}"  x:Name="btnOption" BackgroundColor="Coral" TextColor="White" FontAttributes="Bold"  Clicked="btnOption_Clicked"  CornerRadius="50"  HorizontalOptions="Center"></Button>
+                               
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <IndicatorView x:Name="indicatorView"
+                       MaximumVisible="6"
+                       Margin="0,0,0,40"
+                       IndicatorColor="LightGray"
+                       SelectedIndicatorColor="DarkGray"
+                       HorizontalOptions="Center" />
+
+            <Button Text="Next" ContentLayout="Right, 20"  x:Name="btnNext" BackgroundColor="Coral" TextColor="White" FontAttributes="Bold"  Clicked="btnNext_Clicked" CornerRadius="50" WidthRequest="120" HorizontalOptions="Center" ImageSource="baseline_arrow_forward_ios_24.xml"></Button>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

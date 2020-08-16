@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             mc:Ignorable="d"
+             x:Class="MyDiary.View.LoadingPage">
+    <ContentPage.Content>
+        <StackLayout IsVisible="False" x:Name="busyIndi" BackgroundColor="White"  Orientation="Vertical" >
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                <forms:AnimationView x:Name="AnimationView"
+                         Animation="4887-book.json"
+                         Loop="True"
+                         AutoPlay="True"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center" 
+                             WidthRequest="400"
+                             HeightRequest="400"
+                             Speed="1"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

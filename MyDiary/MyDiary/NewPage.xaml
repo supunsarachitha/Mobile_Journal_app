@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:richtexteditor="clr-namespace:Syncfusion.XForms.RichTextEditor;assembly=Syncfusion.SfRichTextEditor.XForms" xmlns:local="clr-namespace:MyDiary" xmlns:local1="clr-namespace:MyDiary.ViewModel" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             mc:Ignorable="d"
+             x:Class="MyDiary.NewPage" BackgroundColor="White" NavigationPage.HasBackButton="False">
+
+    <NavigationPage.TitleView >
+
+        <StackLayout Orientation="Vertical" HeightRequest="50" VerticalOptions="Start" BackgroundColor="Transparent">
+            <Image Source="Overlay_Spiral3.png" Margin="0,0,20,0"  VerticalOptions="Start"></Image>
+            
+        </StackLayout>
+        
+    </NavigationPage.TitleView>
+
+    <ContentPage.BindingContext>
+        <local1:NewPageViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+        <Grid>
+            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"  Padding="20,0,0,0" x:Name="titleBarLayout" >
+
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                        <ImageButton  BackgroundColor="Transparent" Source="round_keyboard_backspace_24.xml" x:Name="btnBack" Clicked="btnBack_Clicked"  ></ImageButton>
+
+                    </StackLayout>
+                    <StackLayout>
+                        <Label FontSize="15" Text="" HorizontalTextAlignment="Center" HorizontalOptions="Center" x:Name="lbldate" VerticalOptions="Center"  FontAttributes="Bold" ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Padding="0,0,20,0">
+                        
+                        <ImageButton   BackgroundColor="Transparent" Source="round_create_24.xml" x:Name="btnEdit" Clicked="btnEdit_Clicked" Padding="5,0,0,0" ></ImageButton>
+                        <ImageButton   BackgroundColor="Transparent" Source="baseline_delete_24.xml" x:Name="btnDelete" Clicked="btnDelete_Clicked"  Padding="5,0,0,0" ></ImageButton>
+                        <ImageButton   BackgroundColor="Transparent" Source="round_save_24.xml" x:Name="btnSave" Clicked="btnSave_Clicked" Padding="5,0,0,0" ></ImageButton>
+                        
+                    </StackLayout>
+
+                </StackLayout>
+
+                <StackLayout BackgroundColor="Transparent" VerticalOptions="FillAndExpand" x:Name="mainLayout">
+
+                    <inputLayout:SfTextInputLayout  HorizontalOptions="Center" ContainerType="Outlined" OutlineCornerRadius="50" Padding="8,0,8,0" UnfocusedColor="HotPink">
+                        <Entry Text="" x:Name="Entertitle" Placeholder="Title" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" ></Entry>
+                    </inputLayout:SfTextInputLayout>
+
+
+                    <richtexteditor:SfRichTextEditor 
+                    
+                x:Name="rte" 
+                DefaultFont="monospace" 
+                DefaultFontSize="12"
+                VerticalOptions="FillAndExpand" 
+                FontButtonCommand="{Binding FontButtonCommand}"
+                ImageInsertCommand="{Binding ImageInsertCommand}"
+                AutoSize="TextChanges" 
+                MaximumHeightRequest="150" 
+                MinimumHeightRequest="50"
+                    Focused="rte_Focused"
+                    Unfocused="rte_Unfocused"
+                    
+                    TextChanged="rte_TextChanged">
+
+                        <richtexteditor:SfRichTextEditor.ToolbarSettings>
+                            <richtexteditor:ToolbarSettings />
+                        </richtexteditor:SfRichTextEditor.ToolbarSettings>
+
+                    </richtexteditor:SfRichTextEditor>
+
+
+                </StackLayout>
+            </StackLayout>
+
+
+            <StackLayout IsVisible="False" x:Name="busyIndi" BackgroundColor="White"  Orientation="Vertical" >
+                <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                    <forms:AnimationView x:Name="AnimationView"
+                         Animation="4887-book.json"
+                         Loop="True"
+                         AutoPlay="True"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center" 
+                             WidthRequest="400"
+                             HeightRequest="400"
+                             Speed="1"/>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+
+
+
+    </ContentPage.Content>
+</ContentPage>

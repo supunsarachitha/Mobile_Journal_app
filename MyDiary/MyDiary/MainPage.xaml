@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MyDiary.MainPage" NavigationPage.HasNavigationBar="True"
+              NavigationPage.HasBackButton="False" BackgroundColor="White"
+             xmlns:richtexteditor="clr-namespace:Syncfusion.XForms.RichTextEditor;assembly=Syncfusion.SfRichTextEditor.XForms" xmlns:local="clr-namespace:MyDiary" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="#ffb3e9" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+
+    <NavigationPage.TitleView >
+
+        <StackLayout Orientation="Vertical" HeightRequest="50" VerticalOptions="Start" BackgroundColor="Transparent">
+            <Image Source="Overlay_Spiral3.png" Margin="0,0,20,0" VerticalOptions="Start" BackgroundColor="Transparent"></Image>
+        </StackLayout>
+
+    </NavigationPage.TitleView>
+
+
+    <Grid>
+        <AbsoluteLayout>
+            <CollectionView x:Name="pageList"  SelectionMode="Single" EmptyView="No items to display">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Frame BorderColor="LightGray" CornerRadius="20" HasShadow="True" Padding="5" BackgroundColor="Transparent">
+                                <Grid Padding="5,2,5,15">
+
+                                    <!--<VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup Name="CommonStates">
+                                            <VisualState Name="Normal" />
+                                            <VisualState Name="Selected">
+                                                <VisualState.Setters>
+                                                    <Setter Property="BackgroundColor" Value="#ffb3e9" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>-->
+
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackLayout Orientation="Vertical" HeightRequest="60" WidthRequest="70" HorizontalOptions="Center" Grid.RowSpan="2" BackgroundColor="#c4c4c4">
+
+                                        <Label x:Name="dtMonth" Text="{Binding DateTime, StringFormat='{0:MMMM}'}" Margin="0" Padding="0" FontSize="13" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold"  BackgroundColor="BlueViolet" TextColor="White"></Label>
+                                        <Label x:Name="dtDate" Text="{Binding DateTime, StringFormat='{0:dd}'}" Margin="0" Padding="0" FontSize="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" BackgroundColor="#c4c4c4"></Label>
+                                        <Label x:Name="dtYear" Text="{Binding DateTime, StringFormat='{0:yyyy}'}" Margin="0" Padding="0" FontSize="10" HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontAttributes="Bold"  BackgroundColor="#c4c4c4" ></Label>
+                                    </StackLayout>
+
+                                    <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="1" Grid.RowSpan="2" Text="{Binding Title}" FontAttributes="Italic" VerticalOptions="Center" FontSize="20" />
+
+                                </Grid>
+                            </Frame>
+                        </Grid>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+
+            </CollectionView>
+
+            <Button
+            AbsoluteLayout.LayoutBounds="0.95,0.95,65,65"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            BackgroundColor="BlueViolet"
+            CornerRadius="40"
+            HeightRequest="50"
+        Text="+"
+        FontFamily="Bold"
+        FontSize="35"
+        TextColor="WhiteSmoke"
+            WidthRequest="50" x:Name="btnAddNew" Clicked="btnAddNew_Clicked"/>
+        </AbsoluteLayout>
+
+
+        <StackLayout IsVisible="False" x:Name="busyIndi" BackgroundColor="White"  Orientation="Vertical" >
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                <forms:AnimationView x:Name="AnimationView"
+                         Animation="4887-book.json"
+                         Loop="True"
+                         AutoPlay="True"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center" 
+                             WidthRequest="400"
+                             HeightRequest="400"
+                             Speed="1"/>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>
