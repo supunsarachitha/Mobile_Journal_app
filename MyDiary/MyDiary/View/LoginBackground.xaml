@@ -4,10 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="MyDiary.View.LoginBackground" BackgroundImageSource="loginBackground.png" NavigationPage.HasNavigationBar="False">
+             x:Class="MyDiary.View.LoginBackground" BackgroundImageSource="Startup.png" BackgroundColor="Black" NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout>
-            
+        <StackLayout IsVisible="true" x:Name="busyIndi" BackgroundColor="Transparent"  Orientation="Vertical" >
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                <ActivityIndicator IsRunning="True" Color="White" BackgroundColor="Transparent" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

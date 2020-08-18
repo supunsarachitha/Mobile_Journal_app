@@ -27,7 +27,45 @@ namespace MyDiary
             InitializeComponent();
             busyIndi.IsVisible = true;
             PageId = PId;
+            if (PageId > 0)
+            {
+                Device.BeginInvokeOnMainThread(async () =>
+                {
 
+
+                    var list = await App.Database.GetItemAsync(PageId);
+
+                    Entertitle.Text = list.Title;
+                    rte.Text = list.Content;
+                    lblDate.Date = new DateTime(list.DateTime.Year, list.DateTime.Month, list.DateTime.Day);
+                    PageId = list.ID;
+                    await Task.Delay(5000);
+                    busyIndi.IsVisible = false;
+                    rte.ShowToolbar = false;
+
+                    btnEdit.IsVisible = true;
+                    btnSave.IsVisible = false;
+                    btnDelete.IsVisible = true;
+                    mainLayout.IsEnabled = false;
+                    lblDate.IsEnabled = false;
+                });
+            }
+            else
+            {
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    lblDate.Date = DateTime.Today;
+                    await Task.Delay(3000);
+                    busyIndi.IsVisible = false;
+                    btnSave.IsVisible = true;
+                    btnDelete.IsVisible = false;
+                    mainLayout.IsEnabled = true;
+                    lblDate.IsEnabled = true;
+                    btnEdit.IsVisible = false;
+                    rte.ShowToolbar = true;
+                });
+
+            }
 
         }
 
@@ -35,7 +73,7 @@ namespace MyDiary
 
         private async void btnBack_Clicked(object sender, EventArgs e)
         {
-            Navigation.InsertPageBefore(new MainPage(), this);
+            
             await Navigation.PopAsync();
         }
 
@@ -57,18 +95,13 @@ namespace MyDiary
             {
                 Title = Entertitle.Text,
                 Content = finalResult,
-                
-                
+                DateTime = lblDate.Date
+
             };
 
             if (PageId > 0)
             {
                 items.ID = PageId;
-            }
-            else
-            {
-                items.DateTime = DateTime.Today;
-              
             }
 
             var a = await App.Database.SaveItemAsync(items);
@@ -80,12 +113,14 @@ namespace MyDiary
             AnimationView.IsPlaying = true;
 
             mainLayout.IsEnabled = false;
+            lblDate.IsEnabled = false;
             btnDelete.IsVisible = true;
             btnSave.IsVisible = false;
             btnEdit.IsVisible = true;
 
             busyIndi.IsVisible = false;
-            
+            rte.ShowToolbar = false;
+
 
         }
 
@@ -110,50 +145,12 @@ namespace MyDiary
         protected override void OnAppearing()
         {
 
-            if (PageId > 0)
-            {
-                Device.BeginInvokeOnMainThread(async () =>
-                {
-                    
-                    
-                    var list = await App.Database.GetItemAsync(PageId);
-
-                    Entertitle.Text = list.Title;
-                    rte.Text = list.Content;
-                    lblDate.Date = new DateTime(list.DateTime.Year, list.DateTime.Month, list.DateTime.Day);
-                    PageId = list.ID;
-                    await Task.Delay(5000);
-                    busyIndi.IsVisible = false;
-
-                    btnEdit.IsVisible = true;
-                    btnSave.IsVisible = false;
-                    btnDelete.IsVisible = true;
-                    mainLayout.IsEnabled = false;
-                });
-            }
-            else
-            {
-                Device.BeginInvokeOnMainThread(async () =>
-                {
-                    lblDate.Date = DateTime.Today;
-                    await Task.Delay(3000);
-                    busyIndi.IsVisible = false;
-                    btnSave.IsVisible = true;
-                    btnDelete.IsVisible = false;
-                    mainLayout.IsEnabled = true;
-                    btnEdit.IsVisible = false;
-                });
-               
-            }
-
-                
-
             base.OnAppearing();
         }
 
         protected override bool OnBackButtonPressed()
         {
-            Navigation.InsertPageBefore(new MainPage(), this);
+           
             Navigation.PopAsync();
 
             return base.OnBackButtonPressed();
@@ -170,16 +167,16 @@ namespace MyDiary
                 await Navigation.PopAsync();
 
             }
-
-
         }
 
         private void btnEdit_Clicked(object sender, EventArgs e)
         {
             mainLayout.IsEnabled = true;
+            lblDate.IsEnabled = true;
             btnDelete.IsVisible = false;
             btnEdit.IsVisible = false;
             btnSave.IsVisible = true;
+            rte.ShowToolbar = true;
 
         }
     }

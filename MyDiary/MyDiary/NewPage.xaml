@@ -61,6 +61,7 @@
                 AutoSize="TextChanges" 
                 MaximumHeightRequest="150" 
                 MinimumHeightRequest="50"
+                       
                     Focused="rte_Focused"
                     Unfocused="rte_Unfocused"
                     

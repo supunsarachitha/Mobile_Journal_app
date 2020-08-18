@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDiary.Android", "MyDiary\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDiary.iOS", "MyDiary\MyDiary.iOS\MyDiary.iOS.csproj", "{5F401BE5-142E-4043-AF93-5281A6D12D68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDiary", "MyDiary\MyDiary\MyDiary.csproj", "{7D621DBD-2D13-4DBB-B004-315B8E452F3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDiary", "MyDiary\MyDiary\MyDiary.csproj", "{7D621DBD-2D13-4DBB-B004-315B8E452F3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,8 +44,6 @@ Global
 		{42FDB027-1393-4E46-98C1-19FBAC5B12F0}.Debug|x86.Build.0 = Debug|x86
 		{42FDB027-1393-4E46-98C1-19FBAC5B12F0}.Debug|x86.Deploy.0 = Debug|x86
 		{42FDB027-1393-4E46-98C1-19FBAC5B12F0}.Release|Any CPU.ActiveCfg = Release|x86
-		{42FDB027-1393-4E46-98C1-19FBAC5B12F0}.Release|Any CPU.Build.0 = Release|x86
-		{42FDB027-1393-4E46-98C1-19FBAC5B12F0}.Release|Any CPU.Deploy.0 = Release|x86
 		{42FDB027-1393-4E46-98C1-19FBAC5B12F0}.Release|ARM.ActiveCfg = Release|ARM
 		{42FDB027-1393-4E46-98C1-19FBAC5B12F0}.Release|ARM.Build.0 = Release|ARM
 		{42FDB027-1393-4E46-98C1-19FBAC5B12F0}.Release|ARM.Deploy.0 = Release|ARM
@@ -114,7 +112,6 @@ Global
 		{5F401BE5-142E-4043-AF93-5281A6D12D68}.Debug|x86.Build.0 = Debug|iPhone
 		{5F401BE5-142E-4043-AF93-5281A6D12D68}.Debug|x86.Deploy.0 = Debug|iPhone
 		{5F401BE5-142E-4043-AF93-5281A6D12D68}.Release|Any CPU.ActiveCfg = Release|iPhone
-		{5F401BE5-142E-4043-AF93-5281A6D12D68}.Release|Any CPU.Build.0 = Release|iPhone
 		{5F401BE5-142E-4043-AF93-5281A6D12D68}.Release|Any CPU.Deploy.0 = Release|iPhone
 		{5F401BE5-142E-4043-AF93-5281A6D12D68}.Release|ARM.ActiveCfg = Release|iPhone
 		{5F401BE5-142E-4043-AF93-5281A6D12D68}.Release|ARM.Build.0 = Release|iPhone

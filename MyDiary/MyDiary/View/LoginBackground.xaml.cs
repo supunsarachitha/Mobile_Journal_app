@@ -39,16 +39,15 @@ namespace MyDiary.View
                     {
                         //Success  
                         //await DisplayAlert("Success", "Authentication succeeded", "OK");
-                        
-                        await Navigation.PushAsync(new MainPage(), true);
-                        
 
-                        //await Navigation.PopPopupAsync();
+                        Navigation.InsertPageBefore(new MainPage(), this);
+                        await Navigation.PopAsync();
 
                     }
                     else
                     {
                         await DisplayAlert("Error", "Authentication failed", "OK");
+                        System.Environment.Exit(0);
                     }
                 });
             }

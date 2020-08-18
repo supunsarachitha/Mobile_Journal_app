@@ -36,14 +36,14 @@
     </NavigationPage.TitleView>
 
 
-    <Grid>
+    <Grid Padding="3">
         <AbsoluteLayout>
             <CollectionView x:Name="pageList"  SelectionMode="Single" EmptyView="No items to display">
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
-                            <Frame BorderColor="LightGray" CornerRadius="20" HasShadow="True" Padding="5" BackgroundColor="Transparent">
+                            <Frame BorderColor="LightGray" CornerRadius="30" HasShadow="True" Padding="4" BackgroundColor="Transparent">
                                 <Grid Padding="5,2,5,15">
 
                                     <!--<VisualStateManager.VisualStateGroups>
@@ -69,7 +69,7 @@
 
                                     <StackLayout Orientation="Vertical" HeightRequest="60" WidthRequest="70" HorizontalOptions="Center" Grid.RowSpan="2" BackgroundColor="#c4c4c4">
 
-                                        <Label x:Name="dtMonth" Text="{Binding DateTime, StringFormat='{0:MMMM}'}" Margin="0" Padding="0" FontSize="13" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold"  BackgroundColor="BlueViolet" TextColor="White"></Label>
+                                        <Label x:Name="dtMonth" Text="{Binding DateTime, StringFormat='{0:MMMM}'}" Margin="0" Padding="0" FontSize="13" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold"  BackgroundColor="{Binding HeadingColor}" TextColor="White"></Label>
                                         <Label x:Name="dtDate" Text="{Binding DateTime, StringFormat='{0:dd}'}" Margin="0" Padding="0" FontSize="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" BackgroundColor="#c4c4c4"></Label>
                                         <Label x:Name="dtYear" Text="{Binding DateTime, StringFormat='{0:yyyy}'}" Margin="0" Padding="0" FontSize="10" HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontAttributes="Bold"  BackgroundColor="#c4c4c4" ></Label>
                                     </StackLayout>

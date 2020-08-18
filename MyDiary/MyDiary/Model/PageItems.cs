@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace MyDiary.Model
 {
@@ -16,5 +17,7 @@ namespace MyDiary.Model
         public string extra1 { get; set; }
 
         public bool extra2 { get; set; }
+
+        public string HeadingColor { get; set; }
     }
 }

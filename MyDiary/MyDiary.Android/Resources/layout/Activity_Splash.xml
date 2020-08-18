@@ -9,12 +9,14 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation_view"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         app:lottie_fileName="28896-pen-and-book.json"
         app:lottie_autoPlay="true"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:scaleType="centerInside"
-        app:lottie_scale="0.5"/>
+        app:lottie_scale="1" 
+        app:lottie_speed="1.5"/>
+
 </RelativeLayout>

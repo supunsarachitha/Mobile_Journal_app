@@ -108,5 +108,8 @@ namespace MyDiary.Droid
             canvas.DrawBitmap(originalImage, m, new Paint());
             return output;
         }
+
+
+        
     }
 }
