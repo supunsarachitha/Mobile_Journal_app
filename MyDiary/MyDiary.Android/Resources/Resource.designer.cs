@@ -18892,115 +18892,127 @@ namespace MyDiary.Droid
 			public const int fingerprint_dialog_fp_to_error = 2131230984;
 			
 			// aapt resource value: 0x7F080109
-			public const int ic_mtrl_chip_checked_black = 2131230985;
+			public const int ic_back = 2131230985;
 			
 			// aapt resource value: 0x7F08010A
-			public const int ic_mtrl_chip_checked_circle = 2131230986;
+			public const int ic_delete = 2131230986;
 			
 			// aapt resource value: 0x7F08010B
-			public const int ic_mtrl_chip_close_circle = 2131230987;
-			
-			// aapt resource value: 0x7F08010D
-			public const int inputlayout_togglecollapseicon = 2131230989;
-			
-			// aapt resource value: 0x7F08010E
-			public const int inputlayout_togglevisibleicon = 2131230990;
+			public const int ic_Edit = 2131230987;
 			
 			// aapt resource value: 0x7F08010C
-			public const int input_layout_drop_down_icon = 2131230988;
+			public const int ic_mtrl_chip_checked_black = 2131230988;
+			
+			// aapt resource value: 0x7F08010D
+			public const int ic_mtrl_chip_checked_circle = 2131230989;
+			
+			// aapt resource value: 0x7F08010E
+			public const int ic_mtrl_chip_close_circle = 2131230990;
 			
 			// aapt resource value: 0x7F08010F
-			public const int loginBackground = 2131230991;
-			
-			// aapt resource value: 0x7F080110
-			public const int mtrl_snackbar_background = 2131230992;
+			public const int ic_Save = 2131230991;
 			
 			// aapt resource value: 0x7F080111
-			public const int mtrl_tabs_default_indicator = 2131230993;
+			public const int inputlayout_togglecollapseicon = 2131230993;
 			
 			// aapt resource value: 0x7F080112
-			public const int navigation_empty_icon = 2131230994;
+			public const int inputlayout_togglevisibleicon = 2131230994;
+			
+			// aapt resource value: 0x7F080110
+			public const int input_layout_drop_down_icon = 2131230992;
 			
 			// aapt resource value: 0x7F080113
-			public const int NotebookBackground = 2131230995;
+			public const int loginBackground = 2131230995;
 			
 			// aapt resource value: 0x7F080114
-			public const int notification_action_background = 2131230996;
+			public const int mtrl_snackbar_background = 2131230996;
 			
 			// aapt resource value: 0x7F080115
-			public const int notification_bg = 2131230997;
+			public const int mtrl_tabs_default_indicator = 2131230997;
 			
 			// aapt resource value: 0x7F080116
-			public const int notification_bg_low = 2131230998;
+			public const int navigation_empty_icon = 2131230998;
 			
 			// aapt resource value: 0x7F080117
-			public const int notification_bg_low_normal = 2131230999;
+			public const int NotebookBackground = 2131230999;
 			
 			// aapt resource value: 0x7F080118
-			public const int notification_bg_low_pressed = 2131231000;
+			public const int notification_action_background = 2131231000;
 			
 			// aapt resource value: 0x7F080119
-			public const int notification_bg_normal = 2131231001;
+			public const int notification_bg = 2131231001;
 			
 			// aapt resource value: 0x7F08011A
-			public const int notification_bg_normal_pressed = 2131231002;
+			public const int notification_bg_low = 2131231002;
 			
 			// aapt resource value: 0x7F08011B
-			public const int notification_icon_background = 2131231003;
+			public const int notification_bg_low_normal = 2131231003;
 			
 			// aapt resource value: 0x7F08011C
-			public const int notification_template_icon_bg = 2131231004;
+			public const int notification_bg_low_pressed = 2131231004;
 			
 			// aapt resource value: 0x7F08011D
-			public const int notification_template_icon_low_bg = 2131231005;
+			public const int notification_bg_normal = 2131231005;
 			
 			// aapt resource value: 0x7F08011E
-			public const int notification_tile_bg = 2131231006;
+			public const int notification_bg_normal_pressed = 2131231006;
 			
 			// aapt resource value: 0x7F08011F
-			public const int notify_panel_notification_icon_bg = 2131231007;
+			public const int notification_icon_background = 2131231007;
 			
 			// aapt resource value: 0x7F080120
-			public const int Overlay_Spiral3 = 2131231008;
+			public const int notification_template_icon_bg = 2131231008;
 			
 			// aapt resource value: 0x7F080121
-			public const int Overlay_Spiral_Color_Black_Short_Portrait = 2131231009;
+			public const int notification_template_icon_low_bg = 2131231009;
 			
 			// aapt resource value: 0x7F080122
-			public const int pink_flower = 2131231010;
+			public const int notification_tile_bg = 2131231010;
 			
 			// aapt resource value: 0x7F080123
-			public const int popup_forms_android_close_icon = 2131231011;
+			public const int notify_panel_notification_icon_bg = 2131231011;
 			
 			// aapt resource value: 0x7F080124
-			public const int popup_forms_android_shadow = 2131231012;
+			public const int Overlay_Spiral3 = 2131231012;
 			
 			// aapt resource value: 0x7F080125
-			public const int popup_forms_dark_theme_close_icon = 2131231013;
+			public const int Overlay_Spiral_Color_Black_Short_Portrait = 2131231013;
 			
 			// aapt resource value: 0x7F080126
-			public const int popup_forms_light_theme_close_icon = 2131231014;
+			public const int pink_flower = 2131231014;
 			
 			// aapt resource value: 0x7F080127
-			public const int round_add_24 = 2131231015;
+			public const int popup_forms_android_close_icon = 2131231015;
 			
 			// aapt resource value: 0x7F080128
-			public const int round_create_24 = 2131231016;
+			public const int popup_forms_android_shadow = 2131231016;
 			
 			// aapt resource value: 0x7F080129
-			public const int round_keyboard_backspace_24 = 2131231017;
+			public const int popup_forms_dark_theme_close_icon = 2131231017;
 			
 			// aapt resource value: 0x7F08012A
-			public const int round_save_24 = 2131231018;
+			public const int popup_forms_light_theme_close_icon = 2131231018;
 			
 			// aapt resource value: 0x7F08012B
-			public const int Startup = 2131231019;
+			public const int round_add_24 = 2131231019;
 			
 			// aapt resource value: 0x7F08012C
-			public const int tooltip_frame_dark = 2131231020;
+			public const int round_create_24 = 2131231020;
 			
 			// aapt resource value: 0x7F08012D
-			public const int tooltip_frame_light = 2131231021;
+			public const int round_keyboard_backspace_24 = 2131231021;
+			
+			// aapt resource value: 0x7F08012E
+			public const int round_save_24 = 2131231022;
+			
+			// aapt resource value: 0x7F08012F
+			public const int Startup = 2131231023;
+			
+			// aapt resource value: 0x7F080130
+			public const int tooltip_frame_dark = 2131231024;
+			
+			// aapt resource value: 0x7F080131
+			public const int tooltip_frame_light = 2131231025;
 			
 			static Drawable()
 			{
@@ -20204,29 +20216,29 @@ namespace MyDiary.Droid
 		public partial class Mipmap
 		{
 			
-			// aapt resource value: 0x7F0D0000
-			public const int icon = 2131558400;
-			
-			// aapt resource value: 0x7F0D0001
-			public const int icon_round = 2131558401;
-			
-			// aapt resource value: 0x7F0D0002
-			public const int launcher_foreground = 2131558402;
-			
-			// aapt resource value: 0x7F0D0003
-			public const int Startup_hdpi = 2131558403;
-			
 			// aapt resource value: 0x7F0D0004
-			public const int Startup_mdpi = 2131558404;
+			public const int icon = 2131558404;
 			
 			// aapt resource value: 0x7F0D0005
-			public const int Startup_xhdpi = 2131558405;
+			public const int icon_round = 2131558405;
+			
+			// aapt resource value: 0x7F0D0000
+			public const int ic_back = 2131558400;
+			
+			// aapt resource value: 0x7F0D0001
+			public const int ic_delete = 2131558401;
+			
+			// aapt resource value: 0x7F0D0002
+			public const int ic_Edit = 2131558402;
+			
+			// aapt resource value: 0x7F0D0003
+			public const int ic_Save = 2131558403;
 			
 			// aapt resource value: 0x7F0D0006
-			public const int Startup_xxhdpi = 2131558406;
+			public const int launcher_foreground = 2131558406;
 			
 			// aapt resource value: 0x7F0D0007
-			public const int Startup_xxxhdpi = 2131558407;
+			public const int Startup = 2131558407;
 			
 			static Mipmap()
 			{

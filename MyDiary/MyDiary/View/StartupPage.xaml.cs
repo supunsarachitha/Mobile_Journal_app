@@ -25,16 +25,34 @@ namespace MyDiary.View
                 isFingerprintAvailable = await CrossFingerprint.Current.IsAvailableAsync(false);
 
             });
+
+
+
+            MessagingCenter.Subscribe<PasswordPopup>(this, "Password", (sender) =>
+            {
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    await Task.Delay(1000);
+                    NextFunction();
+                });
+                
+            });
         }
 
         private void btnNext_Clicked(object sender, EventArgs e)
+        {
+            NextFunction();
+
+        }
+
+        private async void NextFunction()
         {
             if (isFingerprintAvailable)
             {
                 if (startupCarousel.Position == 4)
                 {
                     Navigation.InsertPageBefore(new MainPage(), this);
-                    Navigation.PopAsync();
+                    await Navigation.PopAsync();
                     return;
                 }
 
@@ -44,7 +62,7 @@ namespace MyDiary.View
                 if (startupCarousel.Position == 3)
                 {
                     Navigation.InsertPageBefore(new MainPage(), this);
-                    Navigation.PopAsync();
+                    await Navigation.PopAsync();
                     return;
                 }
             }
@@ -76,9 +94,7 @@ namespace MyDiary.View
                     btnNext.Text = "Next";
                 }
             }
-
         }
-
 
         private void btnOption_Clicked(object sender, EventArgs e)
         {
@@ -86,10 +102,7 @@ namespace MyDiary.View
             {
                 if (startupCarousel.Position == 2)
                 {
-
                     await Navigation.PushPopupAsync(new PasswordPopup());
-
-
                 }
                 else if (startupCarousel.Position == 3 && isFingerprintAvailable)
                 {
@@ -99,8 +112,9 @@ namespace MyDiary.View
                     if (authResult.Authenticated)
                     {
                         //Success  
-                        await DisplayAlert("Success", "Authentication succeeded", "OK");
+                        await DisplayAlert("Success", "Next time use fingerprint to unlock journal", "OK");
                         Preferences.Set("fingerPrint", true);
+                        NextFunction();
                     }
                     else
                     {

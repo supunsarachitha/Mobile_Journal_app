@@ -76,14 +76,19 @@ namespace MyDiary
 
         private async void btnAddNew_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NewPage(0));
+            busyIndi.IsVisible = true;
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                
+                await Navigation.PushAsync(new NewPage(0));
+            });
+            
         }
 
 
 
         protected override void OnDisappearing()
         {
-            
             base.OnDisappearing();
         }
 
@@ -93,6 +98,12 @@ namespace MyDiary
             Navigation.PopAsync();
             System.Environment.Exit(0);
             return true;
+        }
+
+        protected override void OnAppearing()
+        {
+            busyIndi.IsVisible = false;
+            base.OnAppearing();
         }
 
 

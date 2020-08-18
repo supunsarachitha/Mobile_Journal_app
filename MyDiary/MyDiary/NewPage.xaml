@@ -26,17 +26,18 @@
                 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"  Padding="20,0,0,0" x:Name="titleBarLayout" >
 
                     <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
-                        <ImageButton  BackgroundColor="Transparent" Source="round_keyboard_backspace_24.xml" x:Name="btnBack" Clicked="btnBack_Clicked"  ></ImageButton>
+                        <ImageButton  BackgroundColor="Transparent" Source="ic_back.png" x:Name="btnBack" Clicked="btnBack_Clicked" HeightRequest="35" WidthRequest="35" ></ImageButton>
 
                     </StackLayout>
                     <StackLayout>
-                        <Label FontSize="15" Text="" HorizontalTextAlignment="Center" HorizontalOptions="Center" x:Name="lbldate" VerticalOptions="Center"  FontAttributes="Bold" ></Label>
+                        <DatePicker x:Name="lblDate" Format="dddd, dd MMMM yyyy" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="180" FontSize="14"></DatePicker>
+                        
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Padding="0,0,20,0">
-                        
-                        <ImageButton   BackgroundColor="Transparent" Source="round_create_24.xml" x:Name="btnEdit" Clicked="btnEdit_Clicked" Padding="5,0,0,0" ></ImageButton>
-                        <ImageButton   BackgroundColor="Transparent" Source="baseline_delete_24.xml" x:Name="btnDelete" Clicked="btnDelete_Clicked"  Padding="5,0,0,0" ></ImageButton>
-                        <ImageButton   BackgroundColor="Transparent" Source="round_save_24.xml" x:Name="btnSave" Clicked="btnSave_Clicked" Padding="5,0,0,0" ></ImageButton>
+
+                        <ImageButton   BackgroundColor="Transparent" Source="ic_Edit.png" x:Name="btnEdit" Clicked="btnEdit_Clicked" Padding="5,0,0,0" HeightRequest="35" WidthRequest="35"></ImageButton>
+                        <ImageButton   BackgroundColor="Transparent" Source="ic_delete.png" x:Name="btnDelete" Clicked="btnDelete_Clicked"  Padding="5,0,0,0" HeightRequest="35" WidthRequest="35"></ImageButton>
+                        <ImageButton   BackgroundColor="Transparent" Source="ic_Save.png" x:Name="btnSave" Clicked="btnSave_Clicked" Padding="5,0,0,0" HeightRequest="35" WidthRequest="35" ></ImageButton>
                         
                     </StackLayout>
 
@@ -44,8 +45,8 @@
 
                 <StackLayout BackgroundColor="Transparent" VerticalOptions="FillAndExpand" x:Name="mainLayout">
 
-                    <inputLayout:SfTextInputLayout  HorizontalOptions="Center" ContainerType="Outlined" OutlineCornerRadius="50" Padding="8,0,8,0" UnfocusedColor="HotPink">
-                        <Entry Text="" x:Name="Entertitle" Placeholder="Title" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" ></Entry>
+                    <inputLayout:SfTextInputLayout  HorizontalOptions="Center" ContainerType="Outlined" OutlineCornerRadius="50" Padding="8,0,8,0" UnfocusedColor="HotPink"  >
+                        <Entry Text="" x:Name="Entertitle" Placeholder="Title" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" HeightRequest="50" ></Entry>
                     </inputLayout:SfTextInputLayout>
 
 

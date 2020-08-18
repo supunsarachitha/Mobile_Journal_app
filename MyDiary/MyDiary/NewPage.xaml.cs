@@ -23,32 +23,15 @@ namespace MyDiary
         int PageId;
         public NewPage(int PId)
         {
-            PageId = PId;
+            
             InitializeComponent();
             busyIndi.IsVisible = true;
-
+            PageId = PId;
 
 
         }
 
-        private  void getData(int PId)
-        {
-
-            Device.BeginInvokeOnMainThread(async() =>
-            {
-                busyIndi.IsVisible = true;
-                lbldate.Text = DateTime.Today.ToString("dddd, dd MMMM yyyy");
-                var list = await App.Database.GetItemAsync(PId);
-
-                    Entertitle.Text = list.Title;
-                    rte.Text = list.Content;
-                    lbldate.Text = list.DateTime.ToString();
-                    PageId = list.ID;
-                await Task.Delay(4000);
-                busyIndi.IsVisible = false;
-            });
-            
-        }
+        
 
         private async void btnBack_Clicked(object sender, EventArgs e)
         {
@@ -137,7 +120,7 @@ namespace MyDiary
 
                     Entertitle.Text = list.Title;
                     rte.Text = list.Content;
-                    lbldate.Text = list.DateTime.ToString();
+                    lblDate.Date = new DateTime(list.DateTime.Year, list.DateTime.Month, list.DateTime.Day);
                     PageId = list.ID;
                     await Task.Delay(5000);
                     busyIndi.IsVisible = false;
@@ -152,7 +135,7 @@ namespace MyDiary
             {
                 Device.BeginInvokeOnMainThread(async () =>
                 {
-                    lbldate.Text = DateTime.Today.ToString("dddd dd MMMM yyyy");
+                    lblDate.Date = DateTime.Today;
                     await Task.Delay(3000);
                     busyIndi.IsVisible = false;
                     btnSave.IsVisible = true;

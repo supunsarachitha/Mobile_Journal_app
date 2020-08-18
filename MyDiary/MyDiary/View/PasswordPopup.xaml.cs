@@ -29,10 +29,14 @@ namespace MyDiary.View
             {
                 if(txtPassword.Text == txtPasswordRetype.Text)
                 {
-                    
+                    Device.BeginInvokeOnMainThread(async () =>
+                    {
                         Preferences.Set("loginPin", txtPassword.Text);
-                        Navigation.PopPopupAsync(true);
-
+                        MessagingCenter.Send<PasswordPopup>(this, "Password");
+                        
+                        await Navigation.PopPopupAsync(true);
+                    });
+                   
                 }
                 else
                 {

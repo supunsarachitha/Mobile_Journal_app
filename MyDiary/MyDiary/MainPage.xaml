@@ -87,16 +87,14 @@
             </CollectionView>
 
             <Button
+                BorderColor="LightGray"
             AbsoluteLayout.LayoutBounds="0.95,0.95,65,65"
             AbsoluteLayout.LayoutFlags="PositionProportional"
-            BackgroundColor="BlueViolet"
+            BackgroundColor="CornflowerBlue"
             CornerRadius="40"
-            HeightRequest="50"
-        Text="+"
-        FontFamily="Bold"
-        FontSize="35"
-        TextColor="WhiteSmoke"
-            WidthRequest="50" x:Name="btnAddNew" Clicked="btnAddNew_Clicked"/>
+            HeightRequest="40"
+                ImageSource="ic_Edit.png"
+            WidthRequest="40" x:Name="btnAddNew" Clicked="btnAddNew_Clicked"/>
         </AbsoluteLayout>
 
 

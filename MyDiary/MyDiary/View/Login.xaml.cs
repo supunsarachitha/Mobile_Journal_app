@@ -20,13 +20,6 @@ namespace MyDiary.View
         {
             InitializeComponent();
 
-
-            
-            
-
-            
-
-
         }
 
         private void btnLogin_Clicked(object sender, EventArgs e)
@@ -37,15 +30,11 @@ namespace MyDiary.View
                 {
                     Device.BeginInvokeOnMainThread(async () =>
                     {
-                        
                         await Navigation.PushAsync(new MainPage(), true);
                         
                         await Navigation.PopPopupAsync();
 
-                        
-                        
                     });
-
                 }
                 else
                 {

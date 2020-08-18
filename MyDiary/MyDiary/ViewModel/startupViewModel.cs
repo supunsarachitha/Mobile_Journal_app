@@ -63,7 +63,7 @@ namespace MyDiary.ViewModel
             {
                 Name = "Your secrets safe with you!",
                 Location = "",
-                Details = "If you want you can Protect your jounal by a password",
+                Details = "You can Protect your jounal by a password",
                 ImageUrl = "14214-unlock.json",
                 buttonName = "Add password now",
                 ButtonVisible = true,
@@ -78,7 +78,7 @@ namespace MyDiary.ViewModel
                 {
                     Name = "For your fingertips!",
                     Location = "",
-                    Details = "You can unlock journal by your fingerprint",
+                    Details = "Lock journal by your fingerprint",
                     ImageUrl = "11637-fingerprint-scan.json",
                     buttonName = "Enable Fingerprint unlock",
                     ButtonVisible = true,
