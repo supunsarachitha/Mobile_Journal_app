@@ -13,7 +13,7 @@ namespace MyDiary
         
         public App()
         {
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzAzMTgzQDMxMzgyZTMyMmUzMEdPRnFWVDlPcnlEUUJKK2txSEVQTXowNFNkcmwwNUo4eElXZDRzYmFSNDg9");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("");
             InitializeComponent();
 
 
